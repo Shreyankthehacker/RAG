@@ -1,0 +1,16 @@
+
+{
+    "dockerfile_lines": [],
+    "graphs": {
+      "agent": "/home/shreyank/Gen-ai/ImageRag/src/agent.py:graph"
+    },
+    "env": "/home/shreyank/Gen-ai/ImageRag/.env",
+    "python_version": "3.11",
+    "dependencies": [
+      "."
+    ],
+    
+        "cloud_mode": false
+  
+    
+  }

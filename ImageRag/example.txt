@@ -1,0 +1,1184 @@
+Here is the structured summary of the image:
+
+**Header**
+*   # Resource allocation graph (RAG)
+
+**Text Body**
+
+*   helps predict deadlock is present in system or not
+*   It has nodes, vertices, edges
+    *   process (P)
+    *   Resource (R)
+    *   request
+    *   assignment
+*   R → P
+        ↓
+    edge
+    assignment edge
+*   P→R process requesting resource
+*   request edge
+*   resources assigned to process
+*   O process node
+*   □ resource node
+
+**Diagrams and Examples**
+
+*   eg: of RAG
+    *   **(1)**
+        *   Diagram showing nodes P1, P2 and resources R1, R2. P1 has an edge towards R1. R1 has an edge towards P2. P2 has an edge towards R2. R2 has an edge towards P1.
+        *   (no deadlock occuring) no cycle, no deadlock
+        *   multiple instance of resource
+    *   **(2)**
+        *   Diagram showing nodes P1, P2, P3 and resource R1, R2, R3, R4. P1 has an edge towards R2. R2 has an edge towards P2. P2 has an edge towards R1. R1 has an edge towards P1. P2 has an edge towards R3. R3 has an edge towards P3. P3 has an edge towards R4. R4 has an edge towards P2.
+        *   cycle occured
+        *   ∴ deadlock
+    *   **(3)**
+        *   Diagram showing nodes P1, P2, P3, P4 and resources R1, R2. R1 has an edge towards P1. P1 has an edge towards R1. R1 has an edge towards P2. R2 has an edge towards P2. P2 has an edge towards R2. R2 has an edge towards P3. R1 has an edge towards P4.
+        *   → no deadlock
+        *   cycle detectedHere's a detailed breakdown of the image content:
+
+**Header**
+
+*   "If there is a deadlock then there is cycle, if no cycle then no deadlock. If there is cycle, then there may be or may not be a deadlock."
+
+**Math expression**
+
+*   D → C ≈ !C ⇒ !D
+
+**Text Body**
+
+*   "* Cycle is necessary for deadlock but not sufficient."
+*   "note: If all R are of single instance then presence of cycle is necessary & sufficient condition for de deadlock."
+
+**Math expression**
+
+*   \[D ⇒ C | D → C | ≈ !C → !D | C → D ≈ !D → !C]
+
+**Text Body**
+
+*   "for single instance → based on ↑ order of resumes invested."
+Here's a detailed structured summary of the image, capturing all text and visual elements:
+
+**Header**
+*   → Resource Allocation Graph for deadlock avoidance
+
+**Text Body**
+
+*   A RAG is a virtual representation of how processes request and hold resources in a system. It helps in selecting and preventing deadlocks, where process gets stuck waiting for resources indefinitely.
+*   Example -
+*   Consider 2 processes P1 & P2 and 2 resources R1 & R2:
+    *   ① P1 holds R1 & request R2
+    *   P2 holds R2 & request R1
+*   To prevent deadlock -
+    *   ① Detect cycles - If a cycle exists, deadlock is possible.
+    *   ② Use Resource ordering - Assign a fixed order to resource requests to avoid circular wait.
+    *   ③ Enforce Maximum Request - Processes declare their maximum resource needs beforehand to prevent deadlock - prone situations.
+*   eg: Consider a printing system example:
+    *   R1 (printer) R2 (scanner) P1 & P2
+*   Deadlock:
+
+**Diagrams/Figures**
+
+*   Diagram 1:
+    *   R1 with arrow pointing downward to P1
+    *   R2 with arrow pointing downward to P2
+    *   P1 with arrow pointing towards R2
+    *   P2 with arrow pointing towards R1
+    *   (deadlock) next to the diagram
+*   Diagram 2:
+    *   R1 with arrow pointing towards P1
+    *   R2 with arrow pointing towards P2
+    *   P1 with arrow pointing towards R2
+    *   P2 with arrow pointing towards R1
+Here's a detailed breakdown of the image content:
+
+*   **Header:** Deadlock avoidance:
+
+*   **Text Body:**
+
+    *   Cycle detection - The system detects a cycle in RAG & prevent the second request.
+    *   Resource ordering - This rule could be 'always request scanner before printer to avoid circular waiting.
+    *   Maximum Request Allocation - Processes must declare in advance which resource they will use together.
+
+*   **Visual Elements:** The image appears to be a handwritten note on a notepad. The text is written in blue ink. The right side of the image shows the spiral binding of the notepad. There is faint text visible on the lower half of the page.
+Here's a detailed summary of the image content:
+
+**Header**
+*   Mechanism for Handling Deadlocks
+
+**Section 1: Deadlock Prevention**
+*   ① Deadlock Prevention: ⅰ). Dissatisfying mutual exclusion
+    *   i.e. sharing resources, Some resources are inherently non-sharable & so it might be impossible to dissatisfy M.E.
+*   ⅱ) Dissatisfy no premption → snatch resources
+
+    *   Diagram:
+        *   P₁ (process)
+        *   Arrow from P₁ downwards to R₁ (resource)
+        *   Arrow from R₁ (dotted) to R₂
+    *   Text: P₁ is holding R₁ & waiting for R₂.
+    *   Diagram:
+        *   Arrow downwards from P₁ holding R₁ and waiting for R₂
+        *   R₂ is free. & can be given to P₁
+        *   R₂ is not available & can't be given
+    *   Diagram:
+        *   Arrow downwards from R₂ is free and R₂ is not available
+        *   P₂ is running, then P₁ must wait for R₂
+        *   P₂ is 'm waiting state then R₂ from P₂ is taken & given to P₁
+*   ⅲ) Dissatisfy Hold & wait
+    *   Dissatisfy hold
+    *   here, we release all held resources.
+    *   Dissatisfy wait → not possible or efficient, but ek bounded
+    *   wait lage sekte, iske baad Resor milne wo honge.
+
+**Section 2: Further Elaboration**
+*   In one case, dissatisfy wait & in another case, we dissatisfy hold. In dissatisfy wait, process is allowed to start the execution only if it has been allocated the resources which ideally is not implemented as it isn't possible to know as we don't know how many R are needed by P beforehand. Also, it may result in low utilization of resources.
+*   Dissatisfy hold - processes must release the held R bet making any new R request. Next time, either it gets all the R after releasing or may not get many which may lead to starvation.
+Here is the structured summary of the image:
+
+*   **Header**: iv) Dissatisfy Circular wait→
+
+*   **Text**:
+    *   f: Resource set → natural nos.
+    *   Eg: f(tape drives)→2
+    *   f (hard disks)→4
+    *   only request resources if: f(R₂) < f(R₁)
+    *   If P is having Rᵢ & requesting for Rⱼ, Rⱼ will only be given when f(Rᵢ) < f(Rⱼ), which means the R must be given to the processes in ↑ order of enumeration.
+    *   will dissatisfy circular wait.
+
+*   **Header**: ② Deadlock Avoidance:
+
+*   **Text**:
+    *   Safe state: A state is safe only if there exists a safe sequence. A sequence of processes <P₁, P₂... Pₙ> is a safe seq. for the current allocation state if for each Pᵢ, the resource request that Pᵢ can still make can be satisfied by the currently available resources, + resources held by all Pⱼ where (j < i)
+    *   If no such seq. exists, the system state is said to be unsafe state.
+    *   A safe state is not a deadlock state. Conversely, a deadlock is an unsafe state but not all unsafe states are deadlock.
+
+*   **Diagram**:
+
+    *   A square is divided into four quadrants by a diagonal line.
+    *   The top left quadrant is labeled "unsafe".
+    *   A smaller rectangle within the "unsafe" quadrant is labeled "deadlock".
+    *   The bottom right quadrant is labeled "safe".
+
+*   **Diagram**:
+
+    *   P₁ → R₁
+    *   P₂ → R₂
+    *   P₃ → R₃
+
+*   **Header**: Assignment: Resource Allocata graph for deadlock avoidance
+### Image Summary
+
+*   **Header:** Quer. 12 R available (tape drives)
+
+*   **Text Body:** max. R allocated to cach is:
+
+*   **Diagram:**
+    *   → 3P → Po P2 P2
+    *   max. allocated Need
+    *   P0 → 10 5 5
+    *   P1 → 4 2 2
+    *   P2 → 9 2 7
+    *   9
+
+*   **Text Body:**
+    *   12 - 9 = 3 available
+    *   CA = 3 + 2 + 5 + 2 → 12
+    *   Safe seq: <P1, P0, P2> at to
+
+*   **Header:** → Banker's Algorithm
+
+*   **Sections:**
+    *   Safety Algorithm Resource Request Algorithm
+    *   ① Total matrix
+        *   It tells how many R are available & in what amount.
+        *   Total = \[R1 R2 R3 ... Rm]1xm
+    *   ② Maximums Matrix
+        *   How many R are required by the processes in the system.
+        *   P1 \[R1 R2 R3 Rm]
+        *   P2
+        *   P3
+        *   Pn
+        *   nxm
+    *   ③ Allocation Matrix
+        *   How many R the processes have been allocated & of which type.
+        *   P1 \[R1 ... Rm]
+        *   Pn
+        *   nxm
+    *   ④ Need Matrix
+        *   How many R are further needed by each process.
+        *   (need = max - allocation) matrix.
+        *   P1 \[R1 ... Rm]
+        *   Pn
+        *   nxm
+Here is a structured summary of the image:
+
+**Header**
+*   "Q. max matrix:"
+*   "total matrix:"
+*   "allocation matrix:"
+*   "Soln. need matrix:"
+*   "Safe sequences:"
+*   "-> Safety Algorithm"
+
+**Matrix Content**
+
+*   Max Matrix:
+
+    |       | a | b | c |
+    | :---- | :-: | :-: | :-: |
+    | P₀    | 6 | 5 | 4 |
+    | P₁    | 3 | 4 | 2 |
+    | P₂    | 1 | 0 | 4 |
+    | P₃    | 3 | 2 | 5 |
+*   Total Matrix:
+
+    [7, 9, 10]
+*   Allocation Matrix:
+
+    |       | a | b | c |
+    | :---- | :-: | :-: | :-: |
+    | P₀    | 0 | 3 | 4 |
+    | P₁    | 2 | 1 | 2 |
+    | P₂    | 0 | 0 | 2 |
+    | P₃    | 1 | 2 | 1 |
+*   And: 4 3 1
+*   Need Matrix:
+
+    |       | a | b | c |
+    | :---- | :-: | :-: | :-: |
+    | P₀    | 6 | 2 | 0 |
+    | P₁    | 1 | 3 | 0 |
+    | P₂    | 1 | 0 | 2 |
+    | P₃    | 2 | 0 | 4 |
+
+**Safe Sequences**
+
+*   <- P₂ P₁ P₃ P₀ >
+*   < P₁ P₀ P₂ P₃ > < P₁ P₀ P₃ P₂ >
+*   < P₁ P₂ P₃ P₀ > < P₁ P₂ P₀ P₃ >
+
+**Algorithm Steps**
+
+1.  "Let work & finish vectors of length m & n respectively."
+    "Initialize. work = And. & finish [i] = false for i = 0, 1, ... n-1."
+
+2.  "Fore index 'i' find such that both"
+    *   "a) finish [i] = false"
+    *   "b) need <= work"
+    "If no such 'i' exists go to 4"
+
+3.  "work = work + allocation;"
+    "finish [i] = true"
+    "goto 2"
+
+4.  "If finish [i] == true for all 'i' system is in safe state."
+Here's a structured summary of the image content:
+
+**Header:**
+
+*   Steps:
+
+**List:**
+
+*   ① calculate need matrix
+*   ② then add total a, b, c
+*   ③ CA: Total - allocation total
+*   ④ Need; ≤ CA.
+*   ⑤ Pick the process & repeat.
+
+**Text:**
+
+*   CA = \[4 3 1]
+*   P₀: 6 2 0
+    *   6 ≤ 4
+*   P₁: 1 ≤ 4 ✓ 3 ≤ 3 ✓ 0 ≤ 1 ✓
+    *   pick P₁
+*   update CA: 9 3 1
+    *   2 1 2
+    *   6 4 3
+*   ∴ write down all steps briefly & you can write only 1 safe sequence. (not all needed.).
+*   Ques:
+
+**Matrix 1: Allocation Matrix**
+
+|       | x | y | z |
+| :---- | :-: | :-: | :-: |
+| P₀ | 1 | 2 | 1 |
+| P₁ | 2 | 0 | 1 |
+| P₂ | 2 | 2 | 1 |
+|       | 5 | 4 | 3 |
+
+**Matrix 2: Maximum Matrix**
+
+|       | x | y | z |
+| :---- | :-: | :-: | :-: |
+| P₀ | 2 | 2 | 4 |
+| P₁ | 2 | 1 | 3 |
+| P₂ | 3 | 4 | 1 |
+| Total | 5 | 5 | 5 |
+
+**Matrix 3: Need Matrix**
+
+|       | x | y | z |
+| :---- | :-: | :-: | :-: |
+| P₀ | 1 | 0 | 3 |
+| P₁ | 0 | 1 | 2 |
+| P₂ | 1 | 2 | 0 |
+
+**List:**
+
+*   allocation matrix
+*   ① need matrix
+*   max. matrix.
+*   ② available x y z
+    *   ⁴ ⁸ ⁸
+*   ③ CA = \[0 1 2]
+    *   P₀: 1 ≤ 0 x
+    *   P₁: 0 ≤ 0 ✓ 1 ≤ 1 ✓ 2 ≤ 2 ✓
+*   ④ pick P₁
+*   ⑤ CA: \[2 1 3]
+    *   P₀: 1 ≤ 2 ✓ 0 ≤ 1 ✓ 3 ≤ 3 ✓
+    *   pick P₀
+*   ⑥ CA: \[3 3 4]
+    *   pick P₂ ✓
+
+**Text:**
+
+*   <P₁ P₀ P₂>
+*   safe sequence.
+Here's a detailed breakdown of the image content:
+
+**Header**
+
+*   "let Request; be the request vector for process Pi. If request; [j] == k, then process Pi wants 'k' instances of resources type Rj. When a request for resources is made by Pi, following steps are followed:"
+
+**Resource Request Algorithm**
+
+*   i) if Request; <= Need; goto 2. Else raise an error, since process has exceeded maximum claim.
+*   ii) if Request; <= Available, goto 3. Else Pi must wait as resources aren't available.
+*   iii) Pretend to have allocated the requested resources to Pi & modify as follows:
+
+**Equations:**
+
+*   Available = available - Request;
+*   Allocation; = Allocation; + Request;
+*   Needi = Needi - Request;
+
+**Text Body**
+
+*   "If resulting resource allocation state is safe, transaction is completed & Process Pi is allocated the resources. But if new state is unsafe, Pi wants for Request; & old resource allocation state is restored."
+*   "Ques. Take 3 resources A, B, C instances 10 5 7"
+*   "At to, allocatn matrix"
+*   "Po -> P4"
+
+**Table 1: Max Matrix**
+
+|       | A   | B   | C   |
+| :---- | :-- | :-- | :-- |
+| P₀    | 7   | 5   | 3   |
+| P₁    | 3   | 2   | 2   |
+| P₂    | 9   | 0   | 2   |
+| P₃    | 2   | 2   | 2   |
+| P₄    | 4   | 3   | 3   |
+
+**Text**
+*  total matrix [10 5 7]
+
+**Table 2: Need Matrix**
+
+|       | A   | B   | C   |
+| :---- | :-- | :-- | :-- |
+| P₀    | 7   | 4   | 3   |
+| P₁    | 1   | 2   | 2   |
+| P₂    | 6   | 0   | 0   |
+| P₃    | 0   | 1   | 1   |
+| P₄    | 4   | 3   | 1   |
+
+**Table 3: Allocation Matrix**
+
+|       | A   | B   | C   |
+| :---- | :-- | :-- | :-- |
+| P₀    | 0   | 1   | 0   |
+| P₁    | 2   | 0   | 0   |
+| P₂    | 3   | 0   | 2   |
+| P₃    | 2   | 1   | 1   |
+| P₄    | 0   | 2   | 2   |
+|       | 7   | 2   | 5   |
+
+**Solution**
+
+*   "CA: [3 3 2] 3 4 3 3 4 5 4 4 5"
+*   "<P3 P4 P1 P2 Po> -> safe sequence"
+*   "1947 1957"
+Here is a detailed summary of the image content:
+
+**Header**
+*   Req: P₁ < 1 0 2 >
+
+**Section 1**
+
+*   ① Rᵢ ≤ Nᵢ
+    *   1 ≤ 1 ✓
+    *   0 ≤ 2
+    *   2 ≤ 2 ✓
+*   ② Rᵢ ≤ Aᵢ
+    *   1 ≤ 3 =
+    *   0 ≤ 3 -
+    *   2 ≤ 2 ✓
+*   ④ avl: \[2 3 0]
+*   All Pᵢ: \[3 0 2]
+*   Need Pᵢ: \[0 2 0]
+
+**Section 2**
+
+*   **allo**
+    *   x y z
+    *   P₀ \[0 1 0]
+    *   P₁ \[3 0 2]
+    *   P₂ \[3 0 2]
+    *   P₃ \[2 1 1]
+    *   P₄ \[0 0 2]
+    *   \[8 2 7]
+*   **need**
+    *   x y z
+    *   P₀ \[2 9 3]
+    *   P₁ \[0 2 0]
+    *   P₂ \[6 0 0]
+    *   P₃ \[0 1 1]
+    *   P₄ \[4 3 1]
+
+**Section 3**
+
+*   **avall**
+    *   x y z
+    *   \[2 3 0]
+    *   5 3 2
+    *   5 3 4
+    *   B. 7 4 5
+    *   7 5 5
+    *   10 5 7
+
+**Section 4**
+
+*   < P₁ P₄ P₃ P₀ P₂ >
+*   Assignment:
+    *   A request < 3, 3, 0 > in this scenario is made by P₄, it can be granted or not. Can a request by process P₀ < 0 0 2 > be granted or not after this.
+    *   avl: \[0, 0, 2]
+    *   Need won't get completed.
+    *   Request can't be granted.
+
+**Section 5**
+
+*   P₄ < 3 3 0 >
+*   ① Rᵢ ≤ Nᵢ:
+    *   3 ≤ 4 ✓
+    *   3 ≤ 3 -
+    *   0 ≤ 1 ✓
+*   ② Rᵢ ≤ Aᵢ:
+    *   3 ≤ 3
+    *   3 ≤ 3
+    *   0 ≤ 2 ✓
+*   ④ avl: \[0, 0, 2]
+*   All: P₄: \[3 3 2]
+*   need: P₄: \[1, 0, 1]
+Here is the detailed summary of the image:
+
+**Header**
+
+*   ① 0 < 7 0 < 9 2 < 3
+*   ② 0 < 3 0 < 3 2 < 2
+*   ③ all: Po [ 0 1 2 ]
+*   CA : [ 3 3 0 ]
+*   need : [ 7 4 1 ]
+*   Req. can't be granted.
+
+**Section: Deadlock Detection & Recovery**
+
+*   ③ Deadlock Detection & Recovery
+
+**Text Body**
+
+*   [only for single instances: wait for graph (for dek detection)]
+*   ↳ For multiple instances:
+*   1.  let work & finish be vectors of length 'm' and 'n' respectively.
+*   Initialize work = available for i = 0, 1, ..., n-1
+*   if allocation ≠ 0 then finish[i] = false else finish[i] = true
+*   2.  Find an index 'i' such that
+    *   a) finish [i] = false
+    *   b) Requesti ≤ work
+*   If no such 'i' exist goto 4.
+*   3.  work = work + allocation;
+    *   finish [i] = true
+    *   goto 2
+*   4.  If finish [i] = false for same 'i', 0 ≤ i ≤ n, then system is deadlocked. Also if finish [i] = false, then process Pi is deadlocked.
+Here is the structured summary of the image:
+
+**Header**
+*   Given:
+
+**Section 1: Allocation Matrix**
+
+*   Text: Allocation matrix
+*   Text: at time to
+*   Columns: A, B, C
+*   Rows:
+    *   P0: 0, 1, 0
+    *   P1: 2, 0, 0
+    *   P2: 3, 0, 3
+    *   P3: 2, 1, 1
+    *   P4: 0, 0, 2
+*   Totals: 7, 2, 6
+*   Text: total instances
+*   EAT [7, 2, 6]
+
+**Section 2: Request Matrix**
+
+*   Text: Request matrix
+*   Columns: A, B, C
+*   Rows:
+    *   P0: 0, 0, 0
+    *   P1: 2, 0, 2
+    *   P2: 0, 0, 0
+    *   P3: 1, 0, 0
+    *   P4: 0, 0, 2
+*   CA: [0, 0, 0]
+
+**Section 3: Solution**
+
+*   Text: Soln.
+*   Work = 0, 0, 0
+*   P0 P2 P3 P4 P1
+    *   0, 1, 0
+    *   3, 1, 3
+    *   5, 2, 4
+*   :. safe sequence
+*   at t0: P2: 0, 0, 1
+*   then only P0 can be fulfilled
+*   $ P1, P2, P3, P4 are in deadlock & not finished
+
+**Section 4: Deadlock Recovery**
+
+*   Text: Deadlock Recovery
+*   Process
+*   Resource
+*   Termination
+*   Premption
+*   deadlocked
+*   (1) abort all processes
+*   (1) select a victim
+*   (2) abort processes one by one
+*   ↳ HP will evoke R from love prior. P.
+*   ↓
+*   based on priority
+*   types of process
+*   amt. of resources holding
+*   time of wait & execution
+*   (2) Rollback
+*   (3) Starvation
+*   (4) Ignorance
+Here is the structured summary of the image:
+
+**Header**
+*   Memory Management
+
+**Diagram 1**
+
+*   size ↑ per unit cost ↑ access time ↓
+*   Diagram showing a sequence of connected boxes labeled: CPU → register → Cache → Main memory → Secondary memory
+
+**Text Body**
+
+*   Locality of Reference- S.M. is larger & has less per unit cost but more access time... instructions from SM are preferred & kept in the main memory for less access time.
+
+**Quiz**
+
+*   Ques:
+    *   100 ms to access data from SM
+    *   10 ms to access data from MM
+    *   hit ratio = 90%. Find total access time.
+
+**Solution**
+
+*   Solu:
+    *   first check in SM → 10 x 0.9
+    *   then in MM → (10 + 100) 0.1
+*   Ans: 9 + 11 = 20 ms
+
+**Text Body**
+
+*   OS will translate the logical address generated by CPU to the physical address of main memory.
+*   OS decides which data in SM gets which area in the main memory.
+
+**Header**
+
+*   → Memory Allocation Policies
+
+**List**
+
+*   Contiguous
+*   Non-Contiguous
+
+**List**
+
+*   A. Contiguous
+    *   Static / fixed
+    *   Variable / dynamic
+*   when bringing a process from SM to MM allocate it in MM consecutively together & in continuous partition which also has a part further fixed size partitioning $
+Here is the detailed summary of the image:
+
+**Header**
+*   Variable size partitioning.
+
+**Example**
+*   Diagram showing memory partitioning:
+    *   Block 1: 3kb
+    *   Block 2: (shaded)
+    *   Block 3:
+    *   Block 4:
+*   Labels below the diagram: 5kb, 2kb, 3kb, 4kb
+
+**Text Body**
+
+*   Internal fragmentation - In fixed size, if any process's size is less than the size of the partition then when the process gets inside the memory, it creates a hole which is called as internal fragmentation. No problem in variable size.
+*   External fragmentation - When the memory is sufficiently available to store a process but not in continuous form then we cannot accomodate that process & this is called external fragmentation.
+*   Solution: memory compaction: when memory is reallocated to the processes so that all holes get combined to form one bigger hole & we end on partition allocation algorithms.
+
+**List of Fit Types**
+
+*   ① Best Fit
+*   ② Worst fit
+*   ③ First Fit
+*   ④ Next Fit
+
+**Question**
+
+*   Consider 5 memory partitions of size 100kb, 500kb, 200kb, 300kb, 600kb. If seq. of request for block sizes 212kb, 417kb, 112kb, 426kb arrive in the same order, which of the following makes efficient use of memory?
+
+**Table 1: Memory Allocation Solutions**
+
+*   The table shows the memory allocation using different fit algorithms
+*   Column 1: Memory blocks (labeled using a diagram)
+    *   100kb
+    *   500kb
+    *   200kb
+    *   300kb
+    *   600kb
+*   Column 2: Best
+    *   417
+    *   112
+    *   212
+    *   426
+    *   933 left
+*   Column 3: Worst
+    *   417
+    *   112
+    *   212
+    *   688
+*   Column 4: First
+    *   212
+    *   112
+    *   417
+    *   659
+*   Column 5: Next
+    *   212
+    *   112
+    *   417
+    *   659
+
+**Footnote**
+
+*   (However, keep any process in the left space).
+Here is the structured summary of the image:
+
+**Header**
+*   Prove:
+
+**Claims**
+*   Claim 1: If it is fixed size partitioning, the best fit performs best but in variable size, it performs worst.
+*   Claim 2: In fixed size partitioning, worst fit performs worst but in variable size, performs best.
+*   If they are right, prove it with examples.
+
+**Section: Memory Allocation**
+*   Non - Contiguous Memory Allocation
+
+**Section A: Paging and Segmentation**
+*   A. Paging / Segmentation
+*   The logical address space or secondary memory is divided into equal sized partitions & each partition is called a page.
+
+**Diagram 1**
+*   A diagram showing memory pages.
+*   Page 0: 2 bytes
+*   Page 1
+*   Page 2
+*   Page 3
+*   Address labels: 000, 001, 010, 011, 100, 101, 110, 111
+
+**Diagram 2**
+*   (Page no. / offset) - 3 bit
+*   L.A.
+
+**Formula 1**
+*   no. of Bits in page no. = log2(# pages)
+*   ex: = log2 4 = 2
+
+**Diagram 3**
+*   (Page no. / offset) - 2 bit 1 bit
+
+**Problem**
+*   Ques. LAS is 32 bytes & memory is word addressable. word size = 2by.
+*   Find out no. of words. in LAS.
+
+**Solution**
+*   Soln. # words = 32/2 = 16
+
+**Diagram 4**
+*   A diagram representing word addresses.
+*   Word addresses: 0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111
+*   Word size: 2 bytes for each word.
+
+**Formula 2**
+*   log2 # words
+*   log2 16
+*   #bits in = 4 bits
+*   # words
+
+**Process Information**
+*   Process A (8 byte)
+
+**Formula 3**
+*   #Pages = logical add. space (LAS) / page size
+*   = 8 bytes / 2 bytes
+Here is the structured summary of the image:
+
+*   **Page size Calculation**
+    *   page size = 8 bytes = 4 words
+    *   \# pages = (2^4 words size) / (4 words size) = 32/8 = 4
+*   **Page/Offset Division**
+    *   [page no. / offset]
+    *   2 bits 2 bits
+    *   4
+*   **Question 1**
+    *   Ques. [Frame size is just like page size but its in Main memory]. F. size = 2bytes Here, main memory is Physical address space (PAS) = 8 bytes. Find no. of frames in MM & PA bits & bits division for frame no. & offset.
+*   **Solution 1**
+    *   Soln. 8/2 = 4 = no. of frames in MM.
+    *   log₂4 = 2
+    *   8 = 2³ → bits.
+*   **Frame/Offset Division**
+    *   [frame no. / offset]
+    *   2 1
+    *   3
+*   **Question 2**
+    *   Ques. If LAS = 32 bits, PAS = 8 bits, Page size = 8 bytes. Find LAS, PAS, no. of pages & no. of frames.
+*   **Solution 2**
+    *   Soln. 8/8 = 2^(32)/8 = 2^(29) => no. of pages.
+*   **PAS: Page/Offset Division**
+    *   PAS: [page no. / offset]
+    *   2^(29) 2³
+    *   2^(32)
+*   **Frame/Offset Division**
+    *   [frame no. / offset]
+    *   2⁵ 2³
+    *   2⁸
+*   **Answer**
+    *   Ans. Here, frame size = page size.
+Here's the exhaustive summary of the image content:
+
+*   **Diagrams:**
+    *   Diagram showing Process A (6B) consisting of A0, A1, A2.
+    *   Diagram showing Process B (4B) consisting of B0, B1.
+    *   Diagram showing A2, A1, B0.
+*   **Text:**
+    *   frame 0 = 00
+    *   frame 1 = 01
+    *   frame 2 = 10
+    *   frame 3 = 11
+    *   more than one page of more than one process.
+*   **Header:** Page Table
+*   **Text Body:**
+    *   To know, that which page of which process is running at / frame no. in the main memory, page table can be used.
+    *   More than 1 page of more than 1 processes can be placed anywhere in the main memory.
+*   **Diagrams:**
+    *   Diagram of page table for process A (0, 1, 2 with values 10, 00, 1)
+    *   Diagram of page table for process B (0, 1 with values 11, -)
+*   **Text Body:**
+    *   Page table is created for each process that stores the info of frames nos. of respective pages.
+*   **Header:** # Translation Lookaside Buffer (TLB):
+    *   cache
+    *   some portion of pagetable will be here
+*   **Text Body:**
+    *   In simple paging mechanism, main memory has to be accessed twice, one for accessing the page table through the page no. & then for actually accessing the main memory - PAS (frame + offset), to reduce the effective main memory access time a cache memory that contains some part of the page table is used which is called translation
+Here is the structured summary of the image:
+
+**Header**
+*   lookaside buffer.
+
+**Variables**
+*   H → hit ratio of TLB cache
+*   M → main memory access time
+*   C → cache memory access time
+
+**Formula**
+*   Effective main memory (EMMAT) → H(M+C) + (1-H)(2M+C) access time
+
+**Question 1**
+*   Ques: Considering a paging mechanism if main memory access time is 100ns & TLB having 80% hit ratio & access time as 20ns.
+
+**Solution 1**
+*   Soln: EMMAT = 0.8(100+20) + 0.2(200+20) = 140ns.
+
+**Page Table Uses**
+*   Page Table uses:
+    *   i) Which page no. is running on which frame
+    *   ii) Protection Bit
+    *   iii) Page valid/invalid
+    *   Page is in process's LAS → valid
+
+**Question 2**
+*   Ques: LA = 14 bit Page size = 2kb Process size = 10469 bytes
+*   Find no of pages in LAS.
+
+**Solution 2**
+*   Soln: LAS: → 2^14 bytes.
+*   Page size = 2 * 2^10 = 2^11
+*   # pages = 2^14 / 2^11 = 2^3 = 8 pages
+
+**Table 1**
+
+| Page # |  | Valid/Invalid | Size |
+| :------- | :-: | :------------: | :---: |
+| Pg 0     |    |       v        |  2k   |
+| Pg 1     |    |       v        |  2k   |
+| Pg 2     |    |       v        |  2k   |
+| Pg 3     |    |       v        |  2k   |
+| Pg 4     |    |       v        |  2k   |
+| Pg 5     |    |       v        | rest  |
+| Pg 6     |    |       i        |       |
+| Pg 7     |    |       i        |       |
+
+**Legend**
+*   v → valid
+*   i → invalid
+Here's a detailed breakdown of the image content:
+
+**Header**
+*   "Inverted Paging Existe"
+
+**Text Body**
+
+*   "The memory is being wasted by storing the info about the invalid pages in the page table. The total # valid pages in the system for all processes. Cannot exceed the no. of frames in each MM to avoid this working wastage. the."
+*   "Here, we create the frame table or IPT where no. of entries is same as no. of frames in MM."
+*   "Ques: LA= 32 bits PA = 16 bits."
+*   "If paging is applied with page size 1024 bytes. $ each page table entry contain 4 bytes info. Calculate."
+
+**Problems and Solutions**
+
+*   "A. ① no. of pages ② # of frame."
+*   "B. Page table size in ① simple paging & ② inverted paging"
+*   "Soln LAS= 2^32 bytes PAS= 2^16 bytes"
+*   "Page size= 2^10"
+*   "A. # pages = 2^32 / 2^10 = 2^22"
+*   "#frames = 2^16 / 2^10 = 2^6"
+*   "B. ① 4 x 2^22 = 2^24 ② 2^6 x 2^22 = 2^28"
+*   "B. Segmentation"
+Here's a structured summary of the image, capturing the details as accurately as possible:
+
+**Header**
+*   Example 1: Fixed-Size Partitioning
+
+**Section: Memory Blocks and Processes**
+
+*   mem. blocks:
+    *   A diagram showing four memory blocks, each labeled "100KB"
+*   Processes:
+    *   90KB
+    *   80KB
+    *   70KB
+    *   60KB
+
+**Section: Best Fit**
+
+*   Header: Best Fit
+*   A diagram showing allocation of processes to memory blocks
+    *   90 / 100
+    *   80 / 100
+    *   70 / 100
+    *   60 / 100
+*   Text: Performs well with minimal internal fragmentation
+
+**Section: Worst Fit**
+
+*   Header: Worst Fit
+*   A diagram showing allocation of processes to memory blocks
+    *   90 / 100
+    *   80 / 100
+    *   70 / 100
+    *   60 / 100
+*   Text: no optimization here
+
+**Header**
+*   Example 2: Variable - size Partitioning
+
+**Section: Best Fit (Variable Size)**
+
+*   Header: Best
+*   mem. blocks: 70, 50, 40
+*   A diagram showing variable-sized memory blocks and their allocation:
+    *   120KB
+    *   70 / 100KB
+    *   50 / 80KB
+    *   40 / 60KB
+
+**Section: Worst Fit (Variable Size)**
+
+*   Header: Worst
+*   A diagram showing variable-sized memory blocks and their allocation:
+    *   70 / 120KB
+    *   50 / 100KB
+    *   80KB
+    *   40 / 60KB
+*   Text: higher fragmentation
+*   Text: worst performance
+*   Text: efficient usage of largest memory.
+*   Text: Performs best in this case
+
+**Section: Conclusion**
+
+*   Header: Conclusion:
+*   Claim 1 is True -> best fit ✓ in fixed size
+*   Claim 2 is True -> worst fit ✓ in variable size
+Here is the structured summary of the image:
+
+**Header**
+
+*   B. Segmentation
+
+**Text Body**
+
+*   divided it unequal sizes. accessed through MM.
+*   limit is => length
+*   base is => starting address
+*   Always (offset < limit)
+*   L.A. is divided into segment no. & offset. seg. no is used to index into the segment table to obtain the limit & base for that segment.
+*   Offset value is compared to the limit. If it is smaller then
+
+**Diagram 1**
+
+*   A circle containing four rectangles labeled: seg0, seg1, seg2, seg3
+*   Text: different sizes
+
+**Table 1**
+
+|       | limit | Base |
+| :---- | :---- | :--- |
+| 0     | 1000  | 1900 |
+| 1     | 400   | 6300 |
+| 2     | 400   | 4300 |
+| 3     | 1100  | 3200 |
+| 4     | 1900  | 4700 |
+
+*   Text below table: segment table
+
+**Diagram 2**
+
+*   Vertical bar representing memory with labeled segments: segment 0 (1900), segment 3 (3200), seg 2 (4300), seg 4 (4700), segment 1 (6300)
+*   Text to the right of the memory diagram: Physical memory
+
+**Diagram 3**
+
+*   An arrow from CPU to a rectangle labeled L.A. with sections s/d and segno. offset
+*   A segment table diagram with columns "Limit" and "Base"
+*   An arrow going "yes" to a plus sign in a circle
+*   An arrow going "NO" to Trap
+*   A rectangle labeled Physical memory
+Here is the structured summary of the image:
+
+**Header**
+*   it will be added to the Base valve to obtain PA. Else
+*   It results into a trap.
+
+**Section: Questions**
+
+*   Ques. What are the PA for the given LA?
+    *   ① 0,430
+    *   ② 1, 11
+    *   ③ 2,500
+    *   ④ 3,400 .
+    *   ⑤ 4,112
+
+**Table 1: Segment Table**
+
+| Seg. | Base   | length |
+| :----- | :------- | :------- |
+| 0      | 2019   | 608    |
+| 1      | 2300   | 14     |
+| 2      | 90     | 100    |
+| 3      | 1327   | 580    |
+| 4      | 1952   | 96     |
+
+**Text Body: Solutions**
+
+*   Soln.
+    *   ① 0,430
+        *   430 < 600 ✓
+        *   430 + 219 = 649
+    *   ② 11 < 14 ✓
+        *   11 + 2300 = 2311
+    *   ③ 500 < 100 x
+        *   ∴ Trap (error)
+    *   ④ 400 580 < 580 ✓
+        *   400 + 1327 = 1727
+    *   ⑤ 112 < 96 x
+        *   ∴ Trap (error)
+
+**Section: Page Replacement Algorithms**
+
+*   → Page Replacement Algorithms
+*   Page fault / Miss → Page not found in MM, so we check in SM.
+*   If all pages are filled, we replace it using algos.
+*   Performance of Demand Paging - px (page fault time) + (1-p) main memory access time
+Here's a detailed breakdown of the image content:
+
+**Header**
+*   ① FIFO Policy_
+
+**Section 1: First FIFO Policy Calculation**
+
+*   **Reference string:** `<7 0 1 2 0 3 0 4 2 3 0 3 1 2 0>`
+*   **Frames:**
+    *   Table representing the FIFO page replacement algorithm with 3 frames (F1, F2, F3).
+        *   Columns correspond to the reference string elements.
+        *   Rows represent the frame content at each step.
+        *   Cells contain the page number in the respective frame at that step.
+        *   Below each column, either "PF" (Page Fault) or "H" (Hit) is indicated.
+
+|       | 7   | 0   | 1   | 2   | 0   | 3   | 0   | 4   | 2   | 3   | 0   | 3   | 1   | 2   | 0   |
+| :---- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| **F3** |     |     | 1   | 1   | 1   | 1   | 0   | 0   | 0   | 3   | 3   | 3   | 3   | 2   | 2   |
+| **F2** |     | 0   | 0   | 0   | 0   | 3   | 3   | 3   | 2   | 2   | 2   | 2   | 1   | 1   | 1   |
+| **F1** | 7   | 7   | 7   | 2   | 2   | 2   | 2   | 4   | 4   | 4   | 0   | 0   | 0   | 0   | 0   |
+|       | PF  | PF  | PF  | PF  | H   | PF  | PF  | PF  | PF  | PF  | PF  | H   | PF  | PF  | H   |
+
+*   **Calculations:**
+    *   Hits = 3
+    *   PF = 12
+    *   12/15
+    *   3/15
+    *   PF/Ratio = 4/5
+    *   1/5 = Hit ratio
+    *   80%
+    *   20%
+*   **Answer:** "Ans."
+
+**Section 2: Second FIFO Policy Calculation (Question)**
+
+*   **Question:** "Ques."
+*   **RS.** `<1 2 3 4 1 2 5 1 2 3 4 5>`
+*   **Frames:** (3 Frames)
+    *   Table representing the FIFO page replacement algorithm with 3 frames.
+        *   Columns correspond to the reference string elements.
+        *   Rows represent the frame content at each step.
+        *   Cells contain the page number in the respective frame at that step.
+        *   Below each column, either "F" (Page Fault) or "H" (Hit) is indicated.
+
+|       | 1   | 2   | 3   | 4   | 1   | 2   | 5   | 1   | 2   | 3   | 4   | 5   |
+| :---- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| **3** |     |     | 3   | 3   | 3   | 2   | 2   | 2   | 2   | 2   | 4   | 4   |
+| **2** |     | 2   | 2   | 2   | 1   | 1   | 1   | 1   | 3   | 3   | 3   | 3   |
+| **1** | 1   | 1   | 1   | 4   | 4   | 4   | 5   | 5   | 5   | 5   | 5   | 5   |
+|       | F   | F   | F   | F   | F   | F   | F   | H   | A   | F   | F   | H   |
+
+*   **Calculation:** H = 3/12 = 1/4
+
+**Section 3: Third FIFO Policy Calculation**
+*   **Frames?** (4 Frames)
+    *   Table representing the FIFO page replacement algorithm with 4 frames.
+        *   Columns correspond to the reference string elements.
+        *   Rows represent the frame content at each step.
+        *   Cells contain the page number in the respective frame at that step.
+        *   Below each column, either "F" (Page Fault) or "H" (Hit) is indicated.
+
+|       | 1   | 2   | 3   | 4   | 1   | 2   | 5   | 1   | 2   | 3   | 4   | 5   |
+| :---- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| **4** |     |     |     | 4   | 4   | 4   | 4   | 4   | 4   | 3   | 3   | 3   |
+| **3** |     |     | 3   | 3   | 3   | 3   | 3   | 3   | 2   | 2   | 2   | 2   |
+| **2** |     | 2   | 2   | 2   | 2   | 2   | 2   | 1   | 1   | 1   | 1   | 5   |
+| **1** | 1   | 1   | 1   | 1   | 1   | 1   | 5   | 5   | 5   | 5   | 4   | 4   |
+|       | F   | F   | F   | F   | H   | H   | F   | F   | F   | F   | F   | F   |
+
+*   **Calculation:** H = 2/12 = 1/6
+Here is a detailed breakdown of the image's content:
+
+**Header**
+*   Belady's Anomaly -
+
+**Text Body**
+
+*   Even after ↑ the p # page frames, page faults ↑
+*   which is unexpected, found (in FIFO policy).
+*   (like in prev. ques.)
+
+**Section 2: Optimal Page Replacement Algorithm**
+
+*   ② Optimal Page Replacement Algorithm
+*   Replace that page which is not used in longest dimension of time in near future.
+*   Reference Strings: <7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1 7>
+
+**Table 1**
+
+| frames: |        |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| :-------- | :----- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| f4        |        | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 7 | 7 | 7 |
+| F3        |        | 1 | 1 | 1 | 1 | 1 | 4 | 4 | 4 | 4 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| F2        |        | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| F1        |        | 7 | 7 | 7 | 7 | 7 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+|           |        | F | F | F | F | H | F | H | F | H | H | H | H | F | H | H | H | F | H | H |
+
+**Text Body (continued)**
+
+*   Hits = 12
+*   Page faults = 8
+*   HR = 12/20 = 3/5 => 80%.
+
+**Section 3: Least Recently Used (LRU)**
+
+*   ③ Least Recently Used (LRU)
+*   Reference string: <7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1>
+
+**Table 2**
+
+| frames: |     |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| :-------- | :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| f4        |     | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| F3        |     | 1 | 1 | 1 | 1 | 1 | 4 | 4 | 4 | 4 | 4 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| F2        |     | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| F1        |     | 7 | 7 | 7 | 7 | 7 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 7 | 7 | 7 |
+|           |     | F | F | F | F | H | F | H | H | H | H | F | H | H | F | H | H | F | H | H |
+
+**Text Body (continued)**
+
+*   Hits = 12
+*   Faults = 8
+Here's a detailed breakdown of the image content:
+
+**Header**
+
+*   Thrashing- (with an arrow pointing right)
+
+**Graph**
+
+*   Y-axis label: CPU utilization (pointing upwards)
+*   X-axis label: degree of multiprogramming. (pointing right)
+*   A curve that starts at the origin, increases to a peak, and then decreases. A dashed vertical line indicates the peak of the curve.
+
+**Text Body**
+
+*   When we ↑ the degree of multiprogramming beyond a certain level , the CPU utilization decreases because the processor is always busy in swapping rather than in useful computation. This happen. because the changes that are swapped out are needed in immediate future again & again.
+
+**Section Header**
+
+*   → Disk Scheduling- (with an arrow pointing right)
+
+**Text Body**
+
+*   Seek Time - Time required to move the read-write head on the desired track.
+*   But to take the head on the desired sector; the time req. is called rotational latency.
